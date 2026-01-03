@@ -6,9 +6,9 @@ Free version can only set up to 3 tags enable tag effect, premium version don't 
 
 ## libreforge Effects
 
-{% hint style="info" %}
-MythicPrefixes does not package libreforege, you have to purcahse any of Auxilor's plugin that package libreforage then install it in your server to make this work!
-{% endhint %}
+> [!NOTE]
+> MythicPrefixes does not package libreforege, you have to purcahse any of Auxilor's plugin that package libreforage then install it in your server to make this work!
+
 
 If you want to a tag has libreforge effects, you need do those things:
 
@@ -59,10 +59,10 @@ effects:
 
 Add stats from MythicMobs plugin.
 
-{% hint style="info" %}
-If you are getting **NoSuchMethod** error, this means you are using old version of MythicMobs, you need update it to **LATEST**.\
-By default, all stats exist in MythicMobs are disabled, you need enable them in `plugins/MythicMobs/stats.yml` file or other stat configs.
-{% endhint %}
+> [!NOTE]
+> If you are getting **NoSuchMethod** error, this means you are using old version of MythicMobs, you need update it to **LATEST**.\
+> By default, all stats exist in MythicMobs are disabled, you need enable them in `plugins/MythicMobs/stats.yml` file or other stat configs.
+
 
 ```yaml
 effects:
@@ -79,9 +79,9 @@ effects:
 
 Add stats from AuraSkills plugin.
 
-{% hint style="info" %}
-Since AuraSkills is saving the stat modifier, so if your server crash, prefix config change or other situations where the player's stat may not be cleared properly. Although MythicPrefixes consider this problem, if it still occur in your server: You can try restarting the server. If this does not solve the problem, you will have to use the `/skills modifier removeall` command for every players.
-{% endhint %}
+> [!NOTE]
+> Since AuraSkills is saving the stat modifier, so if your server crash, prefix config change or other situations where the player's stat may not be cleared properly. Although MythicPrefixes consider this problem, if it still occur in your server: You can try restarting the server. If this does not solve the problem, you will have to use the `/skills modifier removeall` command for every players.
+
 
 ```yaml
 effects:

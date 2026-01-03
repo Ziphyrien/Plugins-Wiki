@@ -6,9 +6,9 @@
 
 ## libreforge 效果
 
-{% hint style="info" %}
-MythicPrefixes 不包含 libreforge，你必须购买任何包含 libreforge 的 Auxilor 插件，然后将其安装在你的服务器中才能使其工作！
-{% endhint %}
+> [!NOTE]
+> MythicPrefixes 不包含 libreforge，你必须购买任何包含 libreforge 的 Auxilor 插件，然后将其安装在你的服务器中才能使其工作！
+
 
 如果你想让一个称号拥有 libreforge 效果，你需要做以下事情：
 
@@ -59,10 +59,10 @@ effects:
 
 添加来自 MythicMobs 插件的属性。
 
-{% hint style="info" %}
-如果你遇到 **NoSuchMethod** 错误，这意味着你使用的是旧版本的 MythicMobs，你需要将其更新到 **最新版**。\
-默认情况下，MythicMobs 中存在的所有属性都是禁用的，你需要在 `plugins/MythicMobs/stats.yml` 文件或其他属性配置中启用它们。
-{% endhint %}
+> [!NOTE]
+> 如果你遇到 **NoSuchMethod** 错误，这意味着你使用的是旧版本的 MythicMobs，你需要将其更新到 **最新版**。\
+> 默认情况下，MythicMobs 中存在的所有属性都是禁用的，你需要在 `plugins/MythicMobs/stats.yml` 文件或其他属性配置中启用它们。
+
 
 ```yaml
 effects:
@@ -79,9 +79,9 @@ effects:
 
 添加来自 AuraSkills 插件的属性。
 
-{% hint style="info" %}
-由于 AuraSkills 会保存属性修饰符，所以如果你的服务器崩溃、前缀配置更改或其他情况，玩家的属性可能无法正确清除。虽然 MythicPrefixes 考虑到了这个问题，但如果它仍然在你的服务器中发生：你可以尝试重启服务器。如果这不能解决问题，你将不得不对每个玩家使用 `/skills modifier removeall` 命令。
-{% endhint %}
+> [!NOTE]
+> 由于 AuraSkills 会保存属性修饰符，所以如果你的服务器崩溃、前缀配置更改或其他情况，玩家的属性可能无法正确清除。虽然 MythicPrefixes 考虑到了这个问题，但如果它仍然在你的服务器中发生：你可以尝试重启服务器。如果这不能解决问题，你将不得不对每个玩家使用 `/skills modifier removeall` 命令。
+
 
 ```yaml
 effects:

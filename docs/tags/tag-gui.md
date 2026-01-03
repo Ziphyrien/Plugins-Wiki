@@ -84,9 +84,9 @@ This allows bedrock players display form UI instead of Java menus. Like this:
 * You must set Geyser's `auth-type` to **`floodgate`**.
 * You need carefully follow [those steps](https://wiki.geysermc.org/floodgate/setup/) to setup floodgate in your backend server if you are using BungeeCord.
 
-{% hint style="info" %}
-If your server is correctly installed and configured with floorgate, the console will prompt `Hooking into floorgate` when UltimateShop start to run. If this prompt didn't appear but if you insist that your server has a floodgate, it is very likely that you accidentally downloaded the free version of the plugin.&#x20;
-{% endhint %}
+> [!NOTE]
+> If your server is correctly installed and configured with floorgate, the console will prompt `Hooking into floorgate` when UltimateShop start to run. If this prompt didn't appear but if you insist that your server has a floodgate, it is very likely that you accidentally downloaded the free version of the plugin.&#x20;
+
 
 * All bedrock players will use the new UI. If not, you can try set `choose-prefix-gui.bedrock.check-method` option value from **FLOODGATE** to **UUID** in `config.yml`.
 * Bedrock UI is auto generated and don't need any manual modification.

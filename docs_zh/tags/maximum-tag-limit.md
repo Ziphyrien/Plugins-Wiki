@@ -26,9 +26,9 @@ max-prefixes-amount-conditions:
 
 `default` 下面的部分是针对不同组的。关于 **称号组** 的信息，请查看 [此页面](tag-group-premium.md)。在这个例子中，`scoreboard` 是组 ID。你可以在 [称号](tags.md) 配置中将称号添加到组。组部分下的配置意味着玩家在该组中最多可以使用多少个称号。
 
-{% hint style="info" %}
-称号组功能仅适用于 <mark style="color:red;">**付费**</mark> 版用户。
-{% endhint %}
+> [!NOTE]
+> 称号组功能仅适用于 <mark style="color:red;">**付费**</mark> 版用户。
+
 
 这是一个例子：
 

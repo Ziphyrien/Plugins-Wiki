@@ -26,9 +26,9 @@ The default section means: By default, the maximum limit shared by all tags, thi
 
 The section below `default` are for different groups. For info about **Tag Group**, please view [this page](https://mythicprefixes.superiormc.cn/tags/tag-group-premium). In this example, `scoreboard` is group ID. You can add a tag to group in [Tags](https://mythicprefixes.superiormc.cn/tags/tags) config. Configs under group section means how many tags can a player use in this group at most.
 
-{% hint style="info" %}
-Tag Group feature only available for <mark style="color:red;">**PREMIUM**</mark> version users.
-{% endhint %}
+> [!NOTE]
+> Tag Group feature only available for <mark style="color:red;">**PREMIUM**</mark> version users.
+
 
 Here is an example:
 

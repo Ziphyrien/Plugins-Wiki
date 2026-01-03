@@ -18,10 +18,10 @@ MythicPrefixes provides those new placeholders to PlaceholderAPI!
 
 You can use this **PlaceholderAPI**'s placeholder at other plugins (like chat, scoreboard) to display player's using tag. For example: `%mythicprefixes_chat%`.
 
-{% hint style="info" %}
-If you don't know what does `displayPlaceholderID` mean, please view [this page](https://mythicprefixes.superiormc.cn/tags/tags) first.\
-If your display placeholder ID or prefix ID includes `_` symbol, you can replace them to `-` symbol, otherwise plugin may not parse them correctly.
-{% endhint %}
+> [!NOTE]
+> If you don't know what does `displayPlaceholderID` mean, please view [this page](https://mythicprefixes.superiormc.cn/tags/tags) first.\
+> If your display placeholder ID or prefix ID includes `_` symbol, you can replace them to `-` symbol, otherwise plugin may not parse them correctly.
+
 
 ### %mythicprefixes\_prefix\_\<prefixID>\_\<displayPlaceholderID>%
 

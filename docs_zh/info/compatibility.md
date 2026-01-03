@@ -18,10 +18,10 @@ MythicPrefixes 为 PlaceholderAPI 提供了这些新占位符！
 
 你可以在其他插件（如聊天、计分板）中使用此 **PlaceholderAPI** 占位符来显示玩家正在使用的称号。例如：`%mythicprefixes_chat%`。
 
-{% hint style="info" %}
-如果你不知道 `displayPlaceholderID` 是什么意思，请先查看 [此页面](../tags/tags.md)。\
-如果你的显示占位符 ID 或前缀 ID 包含 `_` 符号，你可以将其替换为 `-` 符号，否则插件可能无法正确解析它们。
-{% endhint %}
+> [!NOTE]
+> 如果你不知道 `displayPlaceholderID` 是什么意思，请先查看 [此页面](../tags/tags.md)。\
+> 如果你的显示占位符 ID 或前缀 ID 包含 `_` 符号，你可以将其替换为 `-` 符号，否则插件可能无法正确解析它们。
+
 
 ### %mythicprefixes\_prefix\_\<prefixID>\_\<displayPlaceholderID>%
 

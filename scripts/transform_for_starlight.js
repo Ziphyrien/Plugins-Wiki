@@ -15,6 +15,22 @@ if (fs.existsSync(OUTPUT_DIR)) {
 fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
 function transformContent(content) {
+    // 0. Transform GitBook Hints to Starlight Asides (Directly)
+    // {% hint style="info" %} ... {% endhint %} -> :::note ... :::
+    
+    const gitbookStyleMap = {
+        'info': 'note',
+        'warning': 'caution',
+        'danger': 'danger',
+        'success': 'tip'
+    };
+    
+    let transformed = content.replace(/{% hint style="(\w+)" %}\s*([\s\S]*?)\s*{% endhint %}/g, (match, style, body) => {
+        const starlightType = gitbookStyleMap[style] || 'note';
+        const cleanBody = body.trim();
+        return `:::${starlightType}\n${cleanBody}\n:::\n`;
+    });
+
     // 1. Transform GitHub Alerts to Starlight Asides
     // > [!NOTE] -> :::note
     // > [!TIP] -> :::tip
@@ -30,7 +46,7 @@ function transformContent(content) {
         'CAUTION': 'danger'
     };
 
-    let transformed = content.replace(/^> \[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\n((?:> .*\n?)*)/gm, (match, type, body) => {
+    transformed = transformed.replace(/^> \[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\n((?:> .*\n?)*)/gm, (match, type, body) => {
         const starlightType = alertMap[type] || 'note';
         const cleanBody = body.replace(/^> /gm, '');
         return `:::${starlightType}\n${cleanBody}:::\n`;

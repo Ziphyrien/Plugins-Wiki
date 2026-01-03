@@ -83,9 +83,9 @@ choose-prefix-gui:
 * 你必须将 Geyser 的 `auth-type` 设置为 **`floodgate`**。
 * 如果你使用的是 BungeeCord，你需要仔细按照 [这些步骤](https://wiki.geysermc.org/floodgate/setup/) 在后端服务器中设置 floodgate。
 
-{% hint style="info" %}
-如果你的服务器正确安装并配置了 floodgate，当 UltimateShop（注：此处原文可能是复制粘贴错误，应为 MythicPrefixes）开始运行时，控制台会提示 `Hooking into floorgate`。如果没有出现此提示，但你坚持认为你的服务器有 floodgate，那么很可能是你意外下载了插件的免费版本。
-{% endhint %}
+> [!NOTE]
+> 如果你的服务器正确安装并配置了 floodgate，当 UltimateShop（注：此处原文可能是复制粘贴错误，应为 MythicPrefixes）开始运行时，控制台会提示 `Hooking into floorgate`。如果没有出现此提示，但你坚持认为你的服务器有 floodgate，那么很可能是你意外下载了插件的免费版本。
+
 
 * 所有基岩版玩家都将使用新 UI。如果没有，你可以尝试在 `config.yml` 中将 `choose-prefix-gui.bedrock.check-method` 选项值从 **FLOODGATE** 设置为 **UUID**。
 * 基岩版 UI 是自动生成的，不需要任何手动修改。
