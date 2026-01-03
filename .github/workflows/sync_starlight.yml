@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Checkout main
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch full history for git log dates
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -50,8 +52,8 @@ jobs:
       - name: Copy Transformed Content
         run: |
           # Define target directory in starlight branch
-          # Assuming structure: src/content/docs/mythicprefixes/
-          TARGET_DIR="starlight-repo/src/content/docs/mythicprefixes"
+          # Content goes to src/content/docs/
+          TARGET_DIR="starlight-repo/src/content/docs"
           mkdir -p $TARGET_DIR
           
           # Copy from dist-starlight to target

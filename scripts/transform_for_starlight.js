@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { execSync } from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,6 +14,17 @@ if (fs.existsSync(OUTPUT_DIR)) {
     fs.rmSync(OUTPUT_DIR, { recursive: true, force: true });
 }
 fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+
+function getLastUpdated(filePath) {
+    try {
+        // Get the last commit date in ISO 8601 format
+        const date = execSync(`git log -1 --format=%cd --date=iso-8601 "${filePath}"`, { encoding: 'utf-8' }).trim();
+        return date;
+    } catch (e) {
+        console.warn(`Could not get git history for ${filePath}: ${e.message}`);
+        return new Date().toISOString(); // Fallback to now
+    }
+}
 
 function transformContent(content) {
     // 0. Transform GitBook Hints to Starlight Asides (Directly)
@@ -57,12 +69,28 @@ function transformContent(content) {
 
 function processFile(filePath, relativePath) {
     let content = fs.readFileSync(filePath, 'utf-8');
+    const lastUpdated = getLastUpdated(filePath);
     
-    // Add frontmatter if missing
-    if (!content.startsWith('---')) {
+    // Check for existing frontmatter
+    const frontmatterRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
+    const match = content.match(frontmatterRegex);
+
+    if (match) {
+        let frontmatter = match[1];
+        const body = match[2];
+        
+        // Append lastUpdated if not present (or overwrite? Starlight uses frontmatter over git if present)
+        // We want to enforce the git date of the SOURCE file.
+        if (!frontmatter.includes('lastUpdated:')) {
+            frontmatter += `\nlastUpdated: ${lastUpdated}`;
+        }
+        
+        content = `---\n${frontmatter}\n---\n${body}`;
+    } else {
+        // Add frontmatter if missing
         const fileName = path.basename(filePath, '.md');
         const title = fileName.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-        content = `---\ntitle: ${title}\n---\n\n${content}`;
+        content = `---\ntitle: ${title}\nlastUpdated: ${lastUpdated}\n---\n\n${content}`;
     }
 
     content = transformContent(content);
@@ -94,7 +122,7 @@ function walkDir(dir, baseDir) {
             
             let targetPath = relativePath;
             if (relativePath.startsWith('docs\\') || relativePath.startsWith('docs/')) {
-                 targetPath = relativePath.replace(/^docs[\\/]/, 'en/');
+                 targetPath = relativePath.replace(/^docs[\\/]/, '');
             } else if (relativePath.startsWith('docs_zh\\') || relativePath.startsWith('docs_zh/')) {
                  targetPath = relativePath.replace(/^docs_zh[\\/]/, 'zh/');
             }
