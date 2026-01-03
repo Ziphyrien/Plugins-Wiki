@@ -58,12 +58,6 @@ jobs:
           
           # Copy from dist-starlight to target
           cp -r dist-starlight/* $TARGET_DIR/
-
-          # Copy Deploy Workflow to Starlight Branch
-          # This ensures the starlight branch has the workflow to deploy itself
-          WORKFLOW_DIR="starlight-repo/.github/workflows"
-          mkdir -p $WORKFLOW_DIR
-          cp .github/workflows/deploy_starlight.yml $WORKFLOW_DIR/
           
           # Check status
           cd starlight-repo
