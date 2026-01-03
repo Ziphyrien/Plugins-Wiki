@@ -1,0 +1,82 @@
+name: Sync to Starlight Branch
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+      - 'docs_zh/**'
+      - 'scripts/transform_for_starlight.js'
+
+jobs:
+  sync-content:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Transformation Script
+        run: npm run transform
+
+      - name: Checkout Starlight Branch
+        uses: actions/checkout@v4
+        with:
+          ref: starlight
+          path: starlight-repo
+          fetch-depth: 0
+        continue-on-error: true
+
+      - name: Initialize Starlight Branch if missing
+        if: failure()
+        run: |
+          mkdir starlight-repo
+          cd starlight-repo
+          git init
+          git checkout -b starlight
+          # Create a basic structure or README so it's not empty
+          echo "# Starlight Content" > README.md
+          git add README.md
+          git commit -m "Initial commit for starlight branch"
+
+      - name: Copy Transformed Content
+        run: |
+          # Define target directory in starlight branch
+          # Assuming structure: src/content/docs/mythicprefixes/
+          TARGET_DIR="starlight-repo/src/content/docs/mythicprefixes"
+          mkdir -p $TARGET_DIR
+          
+          # Copy from dist-starlight to target
+          cp -r dist-starlight/* $TARGET_DIR/
+          
+          # Check status
+          cd starlight-repo
+          git status
+
+      - name: Push to Starlight Branch
+        working-directory: starlight-repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add .
+          
+          # Only commit if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "sync: Update content from main branch"
+            # If we initialized it locally, we need to push to remote
+            # If it existed, we push updates
+            # We need to set remote url because checkout@v4 with path might need it or we are in a fresh init
+            git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git || true
+            git push -u origin starlight
+          fi

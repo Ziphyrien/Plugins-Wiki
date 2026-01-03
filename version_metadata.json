@@ -1,0 +1,171 @@
+{
+  "files": {
+    "docs\\welcome.md": {
+      "original_created": "2026-01-03T03:05:24.428400+00:00",
+      "original_modified": "2025-12-21T11:44:23.148Z",
+      "original_hash": "5390930aa5314de39bd0d32ddf3287aa",
+      "translated_at": "2026-01-03T03:13:51.414284+00:00",
+      "translated_hash": "56e1d4147bd97ee2f8518db618d420cc",
+      "translation_status": "completed",
+      "notes": "",
+      "translated_modified": "2026-01-03T03:17:14.973347+00:00"
+    },
+    "docs\\info\\requirements.md": {
+      "original_created": "2026-01-03T03:05:25.011458+00:00",
+      "original_modified": "2025-07-06T12:12:53.981Z",
+      "original_hash": "8a60ae80d169b6f8ef1bdd33d189a23b",
+      "translated_at": "2026-01-03T03:19:50.899737+00:00",
+      "translated_hash": "6cbf02eb64b59bf4c2c768e7f8e0d110",
+      "translation_status": "completed",
+      "notes": "",
+      "translated_modified": "2026-01-03T03:22:08.128609+00:00"
+    },
+    "docs\\info\\install.md": {
+      "original_created": "2026-01-03T03:05:25.605271+00:00",
+      "original_modified": "2025-01-01T08:43:46.267Z",
+      "original_hash": "7f7b2267110c989d60629b7e5c7defdd",
+      "translated_at": "2026-01-03T03:14:39.568371+00:00",
+      "translated_hash": "2007c08af2c3f0c32391a1e49dca8a97",
+      "translation_status": "completed",
+      "notes": "",
+      "translated_modified": "2026-01-03T03:17:14.983725+00:00"
+    },
+    "docs\\info\\compatibility.md": {
+      "original_created": "2026-01-03T03:05:26.198030+00:00",
+      "original_modified": "2025-08-11T07:23:34.664Z",
+      "original_hash": "af1e6dfd17425240358002593945e2ea",
+      "translated_at": "2026-01-03T03:25:09.980197+00:00",
+      "translated_hash": "86a9aefd001e23a0a959e59a2fefdc68",
+      "translation_status": "completed",
+      "notes": ""
+    },
+    "docs\\info\\configuration-files.md": {
+      "original_created": "2026-01-03T03:05:26.726870+00:00",
+      "original_modified": "2025-06-28T13:58:56.093Z",
+      "original_hash": "4d3ced26a727430af84553f4a36c5448",
+      "translated_at": "2026-01-03T03:23:11.301267+00:00",
+      "translated_hash": "31535483909fd89587cd1b0a0684a408",
+      "translation_status": "completed",
+      "notes": ""
+    },
+    "docs\\info\\commands.md": {
+      "original_created": "2026-01-03T03:05:27.245731+00:00",
+      "original_modified": "2025-12-21T11:45:58.670Z",
+      "original_hash": "50c5740f5041b840a550cebbcb480aa9",
+      "translated_at": "2026-01-03T03:21:35.359397+00:00",
+      "translated_hash": "17c7f04d71b8362ed1d28ba424f0aade",
+      "translation_status": "completed",
+      "notes": ""
+    },
+    "docs\\info\\faq.md": {
+      "original_created": "2026-01-03T03:05:27.824852+00:00",
+      "original_modified": "2025-03-13T14:33:13.375Z",
+      "original_hash": "a5b7901267b718a35bf1c860e07c20be",
+      "translated_at": "2026-01-03T03:20:15.378917+00:00",
+      "translated_hash": "0e8660d179bd8d37798a18e3fc3d02de",
+      "translation_status": "completed",
+      "notes": "",
+      "translated_modified": "2026-01-03T03:22:08.140388+00:00"
+    },
+    "docs\\info\\compare.md": {
+      "original_created": "2026-01-03T03:05:28.401977+00:00",
+      "original_modified": "2025-10-04T02:31:52.405Z",
+      "original_hash": "3550e0723249b007b787ff8a6d2a7940",
+      "translated_at": "2026-01-03T03:26:50.443384+00:00",
+      "translated_hash": "ca6f534f48f49304b76e42b5c41a07c4",
+      "translation_status": "completed",
+      "notes": ""
+    },
+    "docs\\format\\itemformat-tm-simply-version.md": {
+      "original_created": "2026-01-03T03:05:28.919387+00:00",
+      "original_modified": "2025-10-04T02:31:41.549Z",
+      "original_hash": "1baf073732a8070a4adca874f089184e",
+      "translated_at": "2026-01-03T03:33:58.514843+00:00",
+      "translated_hash": "7cee0299711dddf2b65471807bc87255",
+      "translation_status": "completed",
+      "notes": ""
+    },
+    "docs\\format\\action-format.md": {
+      "original_created": "2026-01-03T03:05:29.450925+00:00",
+      "original_modified": "2025-08-11T08:05:52.391Z",
+      "original_hash": "6cc13580cc9967ea7b08ccf25276652a",
+      "translated_at": "2026-01-03T03:32:08.700174+00:00",
+      "translated_hash": "28fb8e49e6c7f57324a6a132a9ab0020",
+      "translation_status": "completed",
+      "notes": ""
+    },
+    "docs\\format\\condition-format.md": {
+      "original_created": "2026-01-03T03:05:29.946064+00:00",
+      "original_modified": "2025-08-11T09:05:17.238Z",
+      "original_hash": "e3eabf9ef3b18aba165e68e0aa59d993",
+      "translated_at": "2026-01-03T03:32:43.206747+00:00",
+      "translated_hash": "34a9fad1870a46fd585251d6874865d4",
+      "translation_status": "completed",
+      "notes": ""
+    },
+    "docs\\tags\\tags.md": {
+      "original_created": "2026-01-03T03:05:30.520875+00:00",
+      "original_modified": "2025-08-08T14:27:31.246Z",
+      "original_hash": "536aeff21010bba468debc0f063f42d3",
+      "translated_at": "2026-01-03T03:28:00.924634+00:00",
+      "translated_hash": "f36e16721ebca05f75f057f287fc1320",
+      "translation_status": "completed",
+      "notes": ""
+    },
+    "docs\\tags\\display-placeholder.md": {
+      "original_created": "2026-01-03T03:05:31.088420+00:00",
+      "original_modified": "2025-08-08T14:27:31.269Z",
+      "original_hash": "504e7b9b52d67feaf3f01fb56c9a6bc0",
+      "translated_at": "2026-01-03T03:30:59.260896+00:00",
+      "translated_hash": "19bd63c212ba11615c97b9926bb56032",
+      "translation_status": "completed",
+      "notes": ""
+    },
+    "docs\\tags\\tag-effect-buff.md": {
+      "original_created": "2026-01-03T03:05:31.865328+00:00",
+      "original_modified": "2025-10-30T03:20:44.984Z",
+      "original_hash": "ff986ec0dad19a32f8afc0ebeacc0008",
+      "translated_at": "2026-01-03T03:29:39.727151+00:00",
+      "translated_hash": "1585f36774646d60b9f56157d5812fe0",
+      "translation_status": "completed",
+      "notes": ""
+    },
+    "docs\\tags\\tag-gui.md": {
+      "original_created": "2026-01-03T03:05:32.396766+00:00",
+      "original_modified": "2025-12-21T11:45:58.670Z",
+      "original_hash": "36b251a13ed0caa0b43afbb7197d2c5f",
+      "translated_at": "2026-01-03T03:28:53.543709+00:00",
+      "translated_hash": "9846c51a0f0e5cfbb6b509fe5b9ccc25",
+      "translation_status": "completed",
+      "notes": ""
+    },
+    "docs\\tags\\tag-group-premium.md": {
+      "original_created": "2026-01-03T03:05:32.887490+00:00",
+      "original_modified": "2025-10-27T11:00:17.221Z",
+      "original_hash": "d637f99f015cf9a14c464ba8bd2b4e2e",
+      "translated_at": "2026-01-03T03:30:25.618214+00:00",
+      "translated_hash": "659e3bf04f800f288dfc3d24d81c116e",
+      "translation_status": "completed",
+      "notes": ""
+    },
+    "docs\\tags\\maximum-tag-limit.md": {
+      "original_created": "2026-01-03T03:05:33.424392+00:00",
+      "original_modified": "2025-10-30T03:28:20.176Z",
+      "original_hash": "537394a9bd0803bbb08f5995669da17b",
+      "translated_at": "2026-01-03T03:31:32.296644+00:00",
+      "translated_hash": "32588236e31c5415da974c12b42d91e0",
+      "translation_status": "completed",
+      "notes": ""
+    },
+    "docs\\features\\color-code.md": {
+      "original_created": "2026-01-03T03:05:33.970324+00:00",
+      "original_modified": "2025-06-28T14:26:28.397Z",
+      "original_hash": "b8e37a0918a354cb955e15973f425b39",
+      "translated_at": "2026-01-03T03:34:32.829226+00:00",
+      "translated_hash": "b595a70b905913c23a1eb93c95e5010a",
+      "translation_status": "completed",
+      "notes": ""
+    }
+  },
+  "last_updated": "2026-01-03T03:34:32.829301+00:00"
+}
