@@ -1,0 +1,22 @@
+{
+  "name": "plugins-wiki",
+  "version": "1.0.0",
+  "description": "Plugins Wiki Documentation",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky",
+    "transform": "node scripts/transform_for_starlight.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "markdownlint-cli": "^0.47.0"
+  },
+  "lint-staged": {
+    "*.md": "echo 'Linting markdown...'"
+  }
+}
