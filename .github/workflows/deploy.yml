@@ -1,0 +1,89 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ starlight ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Starlight (Frontend)
+        uses: actions/checkout@v6
+        with:
+          ref: starlight
+          path: .
+
+      - name: Checkout Scripts
+        uses: actions/checkout@v6
+        with:
+          ref: script
+          path: script
+
+      - name: Checkout Content
+        uses: actions/checkout@v6
+        with:
+          ref: content
+          path: content
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Generate Content & Metadata
+        run: |
+          # The scripts expect adjacent ../content folder structure relative to script root
+          # We have ./script/scripts/status_check.py
+          # And ./content
+          
+          echo "Generating metadata..."
+          python script/scripts/status_check.py gen-meta --output src/assets/version_metadata.json
+          
+          echo "Syncing content files..."
+          # Copy content to src/content/docs
+          # Similar logic to old sync_starlight.yml
+          
+          ZH_TARGET="src/content/docs"
+          EN_TARGET="src/content/docs/en"
+          SOURCE_ROOT="content"
+
+          mkdir -p $ZH_TARGET
+          mkdir -p $EN_TARGET
+
+          if [ -d "$SOURCE_ROOT/zh" ]; then
+            cp -r $SOURCE_ROOT/zh/* $ZH_TARGET/
+          fi
+          
+          if [ -d "$SOURCE_ROOT/en" ]; then
+            cp -r $SOURCE_ROOT/en/* $EN_TARGET/
+          fi
+          
+          ls -R src/content/docs | head -n 20
+
+      - name: Install, build, and upload site
+        uses: withastro/action@v5
+        # with:
+          # path: .
+          # node-version: 20
+          # package-manager: pnpm@latest
+          # build-cmd: pnpm run build
+
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

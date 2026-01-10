@@ -1,0 +1,316 @@
+{
+  "configs": {
+    "mythicprefixes": {
+      "type": "gitbook",
+      "sitemap_url": "https://mythicprefixes.superiormc.cn/sitemap-pages.xml",
+      "base_url": "https://mythicprefixes.superiormc.cn",
+      "output_dir": "docs/mythicprefixes"
+    },
+    "coinsengine": {
+      "type": "retype",
+      "base_url": "https://nightexpressdev.com/coinsengine/",
+      "config_url": "https://nightexpressdev.com/coinsengine/resources/js/config.js",
+      "output_dir": "docs/coinsengine"
+    }
+  },
+  "files": {
+    "docs/mythicprefixes/welcome.md": {
+      "translated_at": "2026-01-06T15:34:59.911176+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2026-01-05T18:52:25.695Z",
+      "source_hash": "c2fc57679d7f7da618022790969ab983",
+      "translation_hash": "070811f725f23fc9869b81b5eacedd7c"
+    },
+    "docs/mythicprefixes/info/requirements.md": {
+      "translated_at": "2026-01-05T14:52:46.613056+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-07-06T12:12:53.981Z",
+      "source_hash": "8a60ae80d169b6f8ef1bdd33d189a23b",
+      "translation_hash": "09cecffc91fb514f1888dcb6233c9b39"
+    },
+    "docs/mythicprefixes/info/install.md": {
+      "translated_at": "2026-01-05T14:52:46.614414+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-01-01T08:43:46.267Z",
+      "source_hash": "7f7b2267110c989d60629b7e5c7defdd",
+      "translation_hash": "944574c6b5306ac7a2bee91a904d4e59"
+    },
+    "docs/mythicprefixes/info/compatibility.md": {
+      "translated_at": "2026-01-05T14:52:46.615610+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-08-11T07:23:34.664Z",
+      "source_hash": "af1e6dfd17425240358002593945e2ea",
+      "translation_hash": "23e885d193a9a033e183a720e4f637dc"
+    },
+    "docs/mythicprefixes/info/configuration-files.md": {
+      "translated_at": "2026-01-03T03:23:11.301267+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-06-28T13:58:56.093Z",
+      "source_hash": "4d3ced26a727430af84553f4a36c5448",
+      "translation_hash": "31535483909fd89587cd1b0a0684a408"
+    },
+    "docs/mythicprefixes/info/faq.md": {
+      "translated_at": "2026-01-05T14:52:46.617215+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-03-13T14:33:13.375Z",
+      "source_hash": "a5b7901267b718a35bf1c860e07c20be",
+      "translation_hash": "9f4488f84465ba6e13f25fd8f2fb260c"
+    },
+    "docs/mythicprefixes/info/compare.md": {
+      "translated_at": "2026-01-06T15:34:59.348132+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2026-01-06T05:20:27.734Z",
+      "source_hash": "ddfdf6a0ab674b523bcaba2a2c13ce65",
+      "translation_hash": "b805feabfdac92dabc94a53a2614d594"
+    },
+    "docs/mythicprefixes/format/itemformat-tm-simply-version.md": {
+      "translated_at": "2026-01-05T14:52:46.619738+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-10-04T02:31:41.549Z",
+      "source_hash": "1baf073732a8070a4adca874f089184e",
+      "translation_hash": "1a40652ab79c8c414a7c966b15a360f1"
+    },
+    "docs/mythicprefixes/format/action-format.md": {
+      "translated_at": "2026-01-05T14:52:46.621084+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-08-11T08:05:52.391Z",
+      "source_hash": "6cc13580cc9967ea7b08ccf25276652a",
+      "translation_hash": "3774b840a9627bed963932cde66f11d7"
+    },
+    "docs/mythicprefixes/format/condition-format.md": {
+      "translated_at": "2026-01-05T14:52:46.622300+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-08-11T09:05:17.238Z",
+      "source_hash": "e3eabf9ef3b18aba165e68e0aa59d993",
+      "translation_hash": "36bec4812976fe31bd03b9cc1c2f3cbf"
+    },
+    "docs/mythicprefixes/tags/tags.md": {
+      "translated_at": "2026-01-05T14:52:46.623254+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-08-08T14:27:31.246Z",
+      "source_hash": "536aeff21010bba468debc0f063f42d3",
+      "translation_hash": "a98bbe3e65c0d57f270d7dff7c61c271"
+    },
+    "docs/mythicprefixes/tags/display-placeholder.md": {
+      "translated_at": "2026-01-05T14:52:46.624374+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-08-08T14:27:31.269Z",
+      "source_hash": "504e7b9b52d67feaf3f01fb56c9a6bc0",
+      "translation_hash": "d7b67b1a04f77453726eb6d69d94c982",
+      "status": "deleted"
+    },
+    "docs/mythicprefixes/tags/tag-effect-buff.md": {
+      "translated_at": "2026-01-05T14:52:46.625545+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-10-30T03:20:44.984Z",
+      "source_hash": "ff986ec0dad19a32f8afc0ebeacc0008",
+      "translation_hash": "c6735ac88a58955f15ba64be99dda267"
+    },
+    "docs/mythicprefixes/tags/tag-gui.md": {
+      "translated_at": "2026-01-09T03:54:30.800665+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2026-01-09T03:53:03.616186+00:00",
+      "source_hash": "d55e8323bd24db0a13d9bb52b458f8d3",
+      "translation_hash": "7031f6c08ddd4f62239312edc110f7bc"
+    },
+    "docs/mythicprefixes/tags/tag-group-premium.md": {
+      "translated_at": "2026-01-05T14:52:46.628201+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-10-27T11:00:17.221Z",
+      "source_hash": "d637f99f015cf9a14c464ba8bd2b4e2e",
+      "translation_hash": "ee069bc891a7e3615ab237d95cc7990b"
+    },
+    "docs/mythicprefixes/tags/maximum-tag-limit.md": {
+      "translated_at": "2026-01-05T14:52:46.629265+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-10-30T03:28:20.176Z",
+      "source_hash": "537394a9bd0803bbb08f5995669da17b",
+      "translation_hash": "dfaecc3bfd8131df0a3fd960a85b4e47"
+    },
+    "docs/mythicprefixes/features/color-code.md": {
+      "translated_at": "2026-01-05T14:52:46.630264+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-06-28T14:26:28.397Z",
+      "source_hash": "b8e37a0918a354cb955e15973f425b39",
+      "translation_hash": "9ec8967f4a62f0e683fc0a3d1e372d41"
+    },
+    "docs/coinsengine/welcome.md": {
+      "translated_at": "2026-01-05T16:21:34.936287+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-10-22T20:31:36+00:00",
+      "source_hash": "2c88d0656bdfc2b676a700c19ff826d8",
+      "translation_hash": "1f934c2f85a01eb21ec4138ff7896e35"
+    },
+    "docs/coinsengine/commands.md": {
+      "translated_at": "2026-01-05T16:21:45.035443+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-10-22T20:31:36+00:00",
+      "source_hash": "e3680fe864a01c98dcc68555ab4bbd16",
+      "translation_hash": "5e90988dc9caadb0d857e25f878089f2"
+    },
+    "docs/coinsengine/permissions.md": {
+      "translated_at": "2026-01-05T16:21:45.237391+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-10-22T20:31:36+00:00",
+      "source_hash": "092cfedc90e509a9fd2d714a87a0a073",
+      "translation_hash": "3c48b80a2a3e16415eb3c241c4b89ef1"
+    },
+    "docs/coinsengine/hooks/vault.md": {
+      "translated_at": "2026-01-05T16:21:47.550882+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-10-22T20:31:36+00:00",
+      "source_hash": "e1ce404066e19fab89121a2bc6eb0578",
+      "translation_hash": "703551a308a615aee2334af84c33a647"
+    },
+    "docs/coinsengine/hooks/plugins.md": {
+      "translated_at": "2026-01-05T16:21:47.329724+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-10-22T20:31:36+00:00",
+      "source_hash": "4af2165a190349fe630e1cb1d265f645",
+      "translation_hash": "43a41c808831e8baf9a3b3c9455be267"
+    },
+    "docs/coinsengine/features/currencies.md": {
+      "translated_at": "2026-01-05T16:21:45.873694+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-10-22T20:31:36+00:00",
+      "source_hash": "53af03a0fd9e1cd520bd5ea065265756",
+      "translation_hash": "44e0b2afa9f00d3195bbec1a03da6f0b"
+    },
+    "docs/coinsengine/features/prefix.md": {
+      "translated_at": "2026-01-05T16:21:46.927722+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-10-22T20:31:36+00:00",
+      "source_hash": "9fb168af6d490a0c8e7a3c79526a364b",
+      "translation_hash": "7f1fc7afac6955ab8b994c5797702a76"
+    },
+    "docs/coinsengine/features/cross-server.md": {
+      "translated_at": "2026-01-05T16:21:45.674741+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-10-22T20:31:36+00:00",
+      "source_hash": "b13839e96f44947bb896a2d2c5393c06",
+      "translation_hash": "21d876a6f7d59d15f1e418cdc57a64db"
+    },
+    "docs/coinsengine/features/wallet.md": {
+      "translated_at": "2026-01-05T16:21:47.128018+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-10-22T20:31:36+00:00",
+      "source_hash": "59841d6b9a7d4e1b4a8eb6d2c95f67ec",
+      "translation_hash": "b798f7edc62cb778eb3515c0c4323131"
+    },
+    "docs/coinsengine/features/leaderboards.md": {
+      "translated_at": "2026-01-05T16:21:46.307363+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-10-22T20:31:36+00:00",
+      "source_hash": "55985c2e899c6c65385ad5c842a05cdb",
+      "translation_hash": "4a9b105a9afad5abcac70491fc2b6c99"
+    },
+    "docs/coinsengine/features/exchange.md": {
+      "translated_at": "2026-01-05T16:21:46.087867+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-10-22T20:31:36+00:00",
+      "source_hash": "dcf6c07bd7ee893b69b7b2e41eba0e95",
+      "translation_hash": "da8fb12c67aa3d4f43842450b399e7c6"
+    },
+    "docs/coinsengine/features/migration.md": {
+      "translated_at": "2026-01-05T16:21:46.720192+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-10-22T20:31:36+00:00",
+      "source_hash": "25c6f4f8a9db23ec498db8b68caa1352",
+      "translation_hash": "a36f076b8cd77ab96d5e5cff63137f87"
+    },
+    "docs/coinsengine/features/logs.md": {
+      "translated_at": "2026-01-05T16:21:46.517004+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-10-22T20:31:36+00:00",
+      "source_hash": "815c7b494af82c78b6a171694cba4933",
+      "translation_hash": "ccc4e20482ac7062b98b37a26bdfade0"
+    },
+    "docs/coinsengine/placeholders/papi.md": {
+      "translated_at": "2026-01-05T16:21:47.969772+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-10-22T20:31:36+00:00",
+      "source_hash": "31283394d4475953bce0319b58275481",
+      "translation_hash": "bfdc6a3533c85b0877925856e90a34f7"
+    },
+    "docs/coinsengine/placeholders/internal.md": {
+      "translated_at": "2026-01-05T16:21:47.765003+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-10-22T20:31:36+00:00",
+      "source_hash": "e0e1fe18a68d09a2ef7665a638e9d373",
+      "translation_hash": "5da24d6cbc0105715bd3c06891782420"
+    },
+    "docs/coinsengine/developer-api.md": {
+      "translated_at": "2026-01-05T16:21:45.468204+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-10-22T20:31:36+00:00",
+      "source_hash": "8fe59b976098a9917dfff17468fe1b18",
+      "translation_hash": "e7c3faa0931c3fe1c2678c7080923027"
+    },
+    "docs/mythicprefixes/info/commands-and-permissions.md": {
+      "translated_at": "2026-01-06T15:34:58.806382+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2025-12-21T11:45:58.670Z",
+      "source_hash": "daf0d23502eaa0918d747eb17f174a7c",
+      "translation_hash": "46cee413761c240b529996dfea8da8e5"
+    },
+    "docs/mythicprefixes/info/data.md": {
+      "translated_at": "2026-01-06T15:34:59.075897+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2026-01-05T19:02:20.185Z",
+      "source_hash": "8dc2f6b6e0ad1b994ea6c50e96ed5f46",
+      "translation_hash": "87456cc2702950fe6dd434c89a88b4af"
+    },
+    "docs/mythicprefixes/features/advanced-language-managment.md": {
+      "translated_at": "2026-01-06T15:34:58.554332+00:00",
+      "translation_status": "completed",
+      "notes": "",
+      "crawled_at": "2026-01-05T19:01:22.033Z",
+      "source_hash": "a4c235f7abef7dae26fa728a5ca6b7f2",
+      "translation_hash": "666528ccb4a34354a800dd95a61af672"
+    },
+    "docs/mythicprefixes/tags/display-placeholders.md": {
+      "crawled_at": "2026-01-09T03:53:02.844684+00:00",
+      "source_hash": "1f6a3df398c67070f6c41a67758cfe7d",
+      "translated_at": "2026-01-09T03:54:27.037534+00:00",
+      "translation_hash": "fda0e6331672dcea877aab4ec7ee1926",
+      "translation_status": "completed",
+      "notes": ""
+    }
+  },
+  "last_updated": "2026-01-09T03:54:30.800738+00:00"
+}
