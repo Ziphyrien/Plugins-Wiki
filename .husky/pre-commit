@@ -1,1 +1,1 @@
-npx markdownlint-cli '**/*.md' --ignore node_modules
+npx markdownlint-cli '**/*.md' --fix --ignore node_modules
