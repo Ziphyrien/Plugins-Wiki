@@ -4,8 +4,9 @@
   "description": "Plugins Wiki Documentation",
   "type": "module",
   "scripts": {
-    "lint:md": "markdownlint-cli2 \"content /**/*.md\"",
-    "fix:md": "npm run lint:md -- --fix"
+    "lint:md": "markdownlint-cli2 \"**/*.md\" \"#node_modules\"",
+    "fix:md": "npm run lint:md -- --fix",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,6 @@
     "markdownlint-cli2": "^0.20.0"
   },
   "lint-staged": {
-    "content/**/*.md": "markdownlint-cli2 --fix"
+    "**/*.md": "markdownlint-cli2 --fix"
   }
 }
