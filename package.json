@@ -17,6 +17,8 @@
     "markdownlint-cli": "^0.47.0"
   },
   "lint-staged": {
-    "*.md": "echo 'Linting markdown...'"
+    "**/*.md": [
+      "markdownlint-cli --fix"
+    ]
   }
 }
