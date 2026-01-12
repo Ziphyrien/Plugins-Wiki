@@ -79,25 +79,6 @@ def transform_hints(content):
     
     return content
 
-def transform_links(content, current_file_path, base_url_prefix):
-    """
-    Fixes relative links to absolute site paths or cleans them up.
-    current_file_path: e.g., 'en/mythicprefixes/welcome.md'
-    base_url_prefix: e.g., '/en/mythicprefixes'
-    """
-    # This logic is complex to port 1:1 without context of all files.
-    # Starlight handles relative links file-to-file well if they end in .md
-    # So we might mostly want to ensure they ARE relative .md links, or absolute site links.
-    
-    # If the crawlers produce standard Markdown relative links [foo](bar.md), Starlight works natively.
-    # The only thing we absolutely need to fix is if the crawler produces site-root relative /foo/bar links
-    # that need to be re-based to /en/plugin/foo/bar.
-    
-    # For now, let's trust the crawlers to produce relative paths (e.g. ./foo.md) 
-    # and just ensure they end in .md for file co-location.
-    
-    return content
-
 def add_frontmatter(content, title, order=None):
     """
     Injects or updates Starlight frontmatter.

@@ -3,7 +3,6 @@ import re
 import json
 import requests
 from urllib.parse import urljoin
-from email.utils import parsedate_to_datetime
 from bs4 import BeautifulSoup
 from markdownify import MarkdownConverter
 from .markdown_utils import process_markdown
@@ -210,24 +209,13 @@ class RetypeCrawler:
                     final_content = process_markdown(md_content, local_path, title, order)
                     content_bytes = final_content.encode('utf-8')
                     
-                    is_new = not os.path.exists(local_path)
-                    if not is_new:
-                        try:
-                            with open(local_path, 'rb') as f:
-                                local_content = f.read()
-                            if local_content == content_bytes:
-                                return True # No change
-                        except: pass
-
                     os.makedirs(os.path.dirname(local_path), exist_ok=True)
                     with open(local_path, 'wb') as f:
                         f.write(content_bytes)
                     
                     rel_path_disp = os.path.relpath(local_path, self.output_dir)
-                    if not is_new:
-                        print(f"    ✅ 更新: {rel_path_disp}")
-                    else:
-                        print(f"    🆕 新增: {rel_path_disp}")
+                    print(f"    ✅ 下载: {rel_path_disp}")
+
                     return True
                 else:
                     print(f"    [警告] {rel_path}: 未找到内容区域")
@@ -256,39 +244,13 @@ class RetypeCrawler:
         print(f"\n📄 发现 {len(pages)} 个页面\n")
         print("-"*60)
         
-        updated_count = 0
-        processed_files = set()
-        
         for index, page in enumerate(pages):
             url = page['url']
             rel_path = page['rel_path']
             has_children = page.get('has_children', False)
             
-            local_path = os.path.join(self.output_dir, rel_path)
-            processed_files.add(os.path.abspath(local_path))
-            
             # Use index + 1 as order
-            if self.process_page(url, rel_path, has_children, index + 1):
-                updated_count += 1
-
-
-        # Delete old files
-        deleted_count = 0
-        if os.path.exists(self.output_dir):
-            for root, dirs, files in os.walk(self.output_dir):
-                for file in files:
-                    if not file.endswith('.md'):
-                        continue
-                    full_path = os.path.join(root, file)
-                    if os.path.abspath(full_path) not in processed_files:
-                        print(f"    🗑️  删除: {os.path.relpath(full_path, self.output_dir)}")
-                        try:
-                            os.remove(full_path)
-                            deleted_count += 1
-                        except Exception as e:
-                            print(f"    [删除失败] {e}")
+            self.process_page(url, rel_path, has_children, index + 1)
 
         print("\n" + "-"*60)
-        print(f"\n📊 同步完成:")
-        print(f"   🔄 更新/新增/检查: {updated_count}")
-        print(f"   🗑️  删除: {deleted_count}")
+        print(f"\n📊 同步完成")

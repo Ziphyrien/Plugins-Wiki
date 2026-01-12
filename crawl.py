@@ -4,11 +4,10 @@ import sys
 from wiki_configs import WIKI_CONFIGS
 from core.crawler_gitbook import GitBookCrawler
 from core.crawler_retype import RetypeCrawler
-from core.git_ops import commit_and_push
 
 # Get project root
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
+PROJECT_ROOT = SCRIPT_DIR
 # Assume content root is sibling to main
 CONTENT_ROOT = os.path.join(os.path.dirname(PROJECT_ROOT), "content")
 
@@ -57,14 +56,8 @@ def main():
         for name, config in WIKI_CONFIGS.items():
             run_crawler(name, config)
         
-        # Commit all changes after batch run
-        commit_and_push(CONTENT_ROOT, f"crawl: Update documentation ({len(WIKI_CONFIGS)} sources)")
-        
     elif args.wiki in WIKI_CONFIGS:
         run_crawler(args.wiki, WIKI_CONFIGS[args.wiki])
-        
-        # Commit specific change
-        commit_and_push(CONTENT_ROOT, f"crawl: Update {args.wiki} docs")
     else:
         print(f"错误: 找不到名为 '{args.wiki}' 的 Wiki 配置。")
         print("使用 --list 查看可用配置。")
