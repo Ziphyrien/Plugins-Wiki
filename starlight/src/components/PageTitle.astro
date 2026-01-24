@@ -1,0 +1,157 @@
+---
+import DefaultPageTitle from '@astrojs/starlight/components/PageTitle.astro';
+import { Icon } from 'astro-icon/components';
+import getReadingTime from 'reading-time';
+import fs from 'node:fs';
+import path from 'node:path';
+
+let wordCount = 0;
+let readingTime = 0;
+let lastUpdated = undefined;
+
+// Helper to find file content based on current URL
+const getFileContent = () => {
+    try {
+        const docsPath = path.join(process.cwd(), 'src/content/docs');
+        // Remove leading/trailing slashes and decode URI components (for Chinese paths)
+        const cleanPath = decodeURIComponent(Astro.url.pathname).replace(/^\/|\/$/g, '');
+        const slug = cleanPath || 'index';
+        
+        const possiblePaths = [
+            path.join(docsPath, `${slug}.md`),
+            path.join(docsPath, `${slug}.mdx`),
+            path.join(docsPath, slug, 'index.md'),
+            path.join(docsPath, slug, 'index.mdx'),
+        ];
+
+        for (const p of possiblePaths) {
+            if (fs.existsSync(p) && fs.statSync(p).isFile()) {
+                return {
+                    content: fs.readFileSync(p, 'utf-8'),
+                    mtime: fs.statSync(p).mtime
+                };
+            }
+        }
+    } catch (e) {
+        // console.error('Error finding file:', e);
+    }
+    return null;
+};
+
+let content = undefined;
+let mtime = undefined;
+
+const fileData = getFileContent();
+if (fileData) {
+    content = fileData.content;
+    mtime = fileData.mtime;
+}
+
+// Load metadata
+const METADATA_PATH = path.join(process.cwd(), 'src/assets/version_metadata.json');
+let metadata: any = { files: {} };
+if (fs.existsSync(METADATA_PATH)) {
+    try {
+        metadata = JSON.parse(fs.readFileSync(METADATA_PATH, 'utf-8'));
+    } catch(e) {}
+}
+
+const getMetadataDate = () => {
+    try {
+        const cleanPath = decodeURIComponent(Astro.url.pathname).replace(/^\/|\/$/g, '');
+        
+        let rel = cleanPath;
+        if (cleanPath.startsWith('en/') || cleanPath === 'en') {
+             rel = cleanPath === 'en' ? 'index' : cleanPath.substring(3);
+        } else if (cleanPath === '') {
+             rel = 'index';
+        }
+        
+        const key = `docs/${rel}.md`;
+        
+        if (metadata.files[key]) {
+             return metadata.files[key];
+        }
+        return null;
+    } catch (e) { return null; }
+};
+
+const fileMeta = getMetadataDate();
+let metaDateStr = null;
+
+if (fileMeta) {
+    const cleanPath = decodeURIComponent(Astro.url.pathname).replace(/^\/|\/$/g, '');
+    // Check if it is Chinese or English based on path, similar to key generation logic
+    const isEn = cleanPath.startsWith('en/') || cleanPath === 'en';
+    
+    if (!isEn) {
+        // Chinese - use translated_at
+        metaDateStr = fileMeta.translated_at;
+        if (!metaDateStr) {
+            throw new Error(`Missing translated_at date for ${cleanPath} (key: ${JSON.stringify(fileMeta)}) in version_metadata.json`);
+        }
+    } else {
+        // English - use crawled_at
+        metaDateStr = fileMeta.crawled_at;
+        if (!metaDateStr) {
+            throw new Error(`Missing crawled_at date for ${cleanPath} (key: ${JSON.stringify(fileMeta)}) in version_metadata.json`);
+        }
+    }
+}
+
+if (content) {
+    const stats = getReadingTime(content);
+    wordCount = stats.words;
+    readingTime = Math.ceil(stats.minutes);
+}
+
+if (metaDateStr) {
+    lastUpdated = new Date(metaDateStr);
+}
+---
+
+<DefaultPageTitle {...Astro.props} />
+
+{ fileMeta && (wordCount > 0 || lastUpdated) && (
+    <div class="meta-info">
+        { wordCount > 0 && (
+        <>
+        <div class="meta-item">
+            <Icon name="ri:book-open-line" class="icon" />
+            <span>约 {wordCount} 字</span>
+        </div>
+        <div class="meta-item">
+            <Icon name="ri:time-line" class="icon" />
+            <span>大约 {readingTime} 分钟</span>
+        </div>
+        </>
+        )}
+        { lastUpdated && (
+            <div class="meta-item">
+                <Icon name="ri:calendar-check-line" class="icon" />
+                <span>更新于 {lastUpdated.toLocaleDateString(Astro.currentLocale, { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+            </div>
+        )}
+    </div>
+)}
+
+<style>
+    .meta-info {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        color: var(--sl-color-gray-3);
+        font-size: var(--sl-text-sm);
+        margin-top: 1.5rem;
+        flex-wrap: wrap;
+        margin-bottom: 0;
+    }
+    .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+    .icon {
+        font-size: 1.2em;
+    }
+</style>

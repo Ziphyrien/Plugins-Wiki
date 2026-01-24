@@ -1,0 +1,14 @@
+{
+    "mythicprefixes": {
+      "type": "gitbook",
+      "sitemap_url": "https://mythicprefixes.superiormc.cn/sitemap-pages.xml",
+      "base_url": "https://mythicprefixes.superiormc.cn",
+      "output_dir": "starlight/src/content/docs/en/mythicprefixes"
+    },
+    "coinsengine": {
+      "type": "retype",
+      "base_url": "https://nightexpressdev.com/coinsengine/",
+      "config_url": "https://nightexpressdev.com/coinsengine/resources/js/config.js",
+      "output_dir": "starlight/src/content/docs/en/coinsengine"
+    }
+}

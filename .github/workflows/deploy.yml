@@ -1,0 +1,60 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "starlight/**"
+      - ".github/workflows/deploy.yml"
+  repository_dispatch:
+    types: [content-updated]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Main (Scripts & Starlight)
+        uses: actions/checkout@v6
+
+      - name: Checkout Content
+        uses: actions/checkout@v6
+        with:
+          ref: content
+          path: content
+          fetch-depth: 0
+
+      - name: Sync Content to Starlight
+        run: |
+          TARGET="starlight/src/content/docs"
+          SOURCE="content/docs"
+
+          mkdir -p "$TARGET"
+
+          if [ -d "$SOURCE" ]; then
+            cp -r "$SOURCE"/* "$TARGET"/
+          fi
+
+          echo "Content synced:"
+          ls -R starlight/src/content/docs | head -n 30
+
+      - name: Install, build, and upload site
+        uses: withastro/action@v5
+        with:
+          path: starlight
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
