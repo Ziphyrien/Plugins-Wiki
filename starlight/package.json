@@ -17,7 +17,7 @@
     "reading-time": "^1.5.0",
     "sharp": "^0.34.2",
     "starlight-sidebar-topics": "^0.6.2",
-    "starlight-sidebar-topics-dropdown": "^0.5.2",
+    "starlight-sidebar-topics-dropdown": "^0.6.0",
     "tailwindcss": "^4.1.18"
   }
 }
