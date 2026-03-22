@@ -12,17 +12,14 @@
 
 ## 结构
 
-本项目采用 **Git Worktree** 实现代码与内容的分离：
+本项目采用 **单分支结构**，代码与文档内容统一维护在 `main` 分支中：
 
-- **Main 分支** (`/`): 存放项目基础设施代码。
-  - `scripts/`: Python 爬虫核心代码。
-    - `crawl.py`: 爬虫入口。
-    - `wiki_configs.json`: 爬虫源配置。
-  - `starlight/`: 文档网站前端项目 (Astro)。
-  - `TRANSLATION_PROMPT.md`: 翻译规范与术语表。
-
-- **Content 分支** (挂载于 `starlight/src/content/`): 存放所有文档数据。
-  - `docs/`: Markdown 文档源文件（爬虫输出目标）。
+- `scripts/`: Python 爬虫核心代码。
+  - `crawl.py`: 爬虫入口。
+  - `wiki_configs.json`: 爬虫源配置。
+- `starlight/`: 文档网站前端项目 (Astro)。
+  - `src/content/docs/`: Markdown 文档源文件（爬虫输出目标）。
+- `TRANSLATION_PROMPT.md`: 翻译规范与术语表。
 
 ## 开始
 
@@ -36,15 +33,9 @@
 
 ### 2. 克隆仓库
 
-由于本项目采用 **Git Worktree** 管理文档内容（代码与内容分离），请严格按照以下步骤克隆与初始化：
-
 ```bash
-# 克隆主仓库
 git clone https://github.com/Ziphyrien/Plugins-Wiki.git
 cd Plugins-Wiki
-
-# 挂载 content 分支到 starlight/src/content
-git worktree add starlight/src/content content
 ```
 
 ### 3. 安装依赖
@@ -80,7 +71,7 @@ python crawl.py coinsengine
 python crawl.py all
 ```
 
-> **注意**: 爬取的内容会自动输出到 Worktree 挂载的 `starlight/src/content/docs` 目录中。
+> **注意**: 爬取的内容会直接输出到仓库内的 `starlight/src/content/docs` 目录中。
 
 ### 5. 本地预览
 

@@ -13,10 +13,9 @@ logger = logging.getLogger(__name__)
 class BaseCrawler(ABC):
     """Abstract base class for all wiki crawlers."""
 
-    def __init__(self, name: str, config: dict, content_root: Path):
+    def __init__(self, name: str, config: dict):
         self.name = name
         self.config = config
-        self.content_root = Path(content_root)
         self.base_url = config["base_url"].rstrip("/")
         self.output_dir = Path(config["output_dir"])
         self.session = requests.Session()
@@ -39,12 +38,17 @@ class BaseCrawler(ABC):
         Main entry point. Returns (success_count, fail_count).
         """
         logger.info("=" * 60)
-        logger.info(f"文档同步工具 - {self.name} ({self.__class__.__name__})")
+        logger.info(f"文档抓取工具 - {self.name} ({self.__class__.__name__})")
         logger.info("=" * 60)
 
         try:
             pages = self.fetch_pages()
             total = len(pages)
+
+            if total == 0:
+                logger.warning("⚠️ 未发现可抓取页面")
+                return 0, 0
+
             logger.info(f"📄 发现 {total} 个页面")
             logger.info("-" * 60)
 
@@ -56,7 +60,7 @@ class BaseCrawler(ABC):
                     failed += 1
 
             logger.info("-" * 60)
-            logger.info(f"📊 同步完成: {success} 成功, {failed} 失败")
+            logger.info(f"📊 抓取完成: {success} 成功, {failed} 失败")
             return success, failed
 
         except Exception as e:

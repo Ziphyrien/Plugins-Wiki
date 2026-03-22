@@ -6,9 +6,11 @@ on:
     paths:
       - "starlight/**"
       - ".github/workflows/deploy.yml"
-  repository_dispatch:
-    types: [content-updated]
   workflow_dispatch:
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -19,29 +21,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Main (Scripts & Starlight)
+      - name: Checkout Main
         uses: actions/checkout@v6
 
-      - name: Checkout Content
-        uses: actions/checkout@v6
-        with:
-          ref: content
-          path: content
-          fetch-depth: 0
-
-      - name: Sync Content to Starlight
+      - name: Validate content tree
         run: |
-          TARGET="starlight/src/content/docs"
-          SOURCE="content/docs"
-
-          mkdir -p "$TARGET"
-
-          if [ -d "$SOURCE" ]; then
-            cp -r "$SOURCE"/* "$TARGET"/
+          if [ ! -d "starlight/src/content/docs" ]; then
+            echo "::error::Missing content docs directory: starlight/src/content/docs"
+            exit 1
           fi
 
-          echo "Content synced:"
-          ls -R starlight/src/content/docs | head -n 30
+          echo "Content ready at starlight/src/content/docs"
+          find starlight/src/content/docs -maxdepth 2 -type f | head -n 30
 
       - name: Install, build, and upload site
         uses: withastro/action@v5

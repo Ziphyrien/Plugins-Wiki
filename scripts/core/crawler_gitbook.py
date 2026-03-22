@@ -2,7 +2,6 @@
 GitBook crawler implementation.
 """
 import xml.etree.ElementTree as ET
-from pathlib import Path
 from urllib.parse import unquote
 import logging
 
@@ -16,8 +15,8 @@ logger = logging.getLogger(__name__)
 class GitBookCrawler(BaseCrawler):
     """Crawler for GitBook-based wikis using sitemap."""
 
-    def __init__(self, name: str, config: dict, content_root: Path):
-        super().__init__(name, config, content_root)
+    def __init__(self, name: str, config: dict):
+        super().__init__(name, config)
         self.sitemap_url = config["sitemap_url"]
 
     def fetch_pages(self) -> list[dict]:

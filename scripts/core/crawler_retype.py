@@ -98,8 +98,8 @@ class RetypeConverter(MarkdownConverter):
 class RetypeCrawler(BaseCrawler):
     """Crawler for Retype-based documentation sites."""
 
-    def __init__(self, name: str, config: dict, content_root: Path):
-        super().__init__(name, config, content_root)
+    def __init__(self, name: str, config: dict):
+        super().__init__(name, config)
         self.config_url = config["config_url"]
 
     def fetch_pages(self) -> list[dict]:
