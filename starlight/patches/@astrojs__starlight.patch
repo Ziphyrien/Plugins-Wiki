@@ -1,7 +1,7 @@
-diff --git a/components/Icons.ts b/components/Icons.ts
-index 413477d5343737363d99a68a3beb98f0991a469f..8fac8a85b41e84ed085e38d6ea930f2e51781f0c 100644
---- a/components/Icons.ts
-+++ b/components/Icons.ts	
+diff --git a/components-internals/Icons.ts b/components-internals/Icons.ts
+index e0cde48b4099d53a304d09fe3abdae5cf06e5607..5b1276b79a0a0ec30fb06f04c029e98eefdfa1b5 100644
+--- a/components-internals/Icons.ts
++++ b/components-internals/Icons.ts
 @@ -3,6 +3,8 @@ import { FileIcons } from '../user-components/file-tree-icons';
  export const BuiltInIcons = {
  	'up-caret':
