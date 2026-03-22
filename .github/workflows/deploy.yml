@@ -35,7 +35,7 @@ jobs:
           find starlight/src/content/docs -maxdepth 2 -type f | head -n 30
 
       - name: Install, build, and upload site
-        uses: withastro/action@v5
+        uses: withastro/action@v6
         with:
           path: starlight
 
