@@ -35,11 +35,11 @@ importers:
         specifier: ^0.34.2
         version: 0.34.5
       starlight-sidebar-topics:
-        specifier: ^0.6.2
-        version: 0.6.2(@astrojs/starlight@0.37.5(patch_hash=d48d848fae7599fe5f2a4c4e61e78cf85df2a809c5a915b48758d9f59cc43d23)(astro@5.17.1(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.54.0)(typescript@5.9.3)))
+        specifier: ^0.7.0
+        version: 0.7.1(@astrojs/starlight@0.37.5(patch_hash=d48d848fae7599fe5f2a4c4e61e78cf85df2a809c5a915b48758d9f59cc43d23)(astro@5.17.1(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.54.0)(typescript@5.9.3)))
       starlight-sidebar-topics-dropdown:
         specifier: ^0.6.0
-        version: 0.6.0(@astrojs/starlight@0.37.5(patch_hash=d48d848fae7599fe5f2a4c4e61e78cf85df2a809c5a915b48758d9f59cc43d23)(astro@5.17.1(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.54.0)(typescript@5.9.3)))(starlight-sidebar-topics@0.6.2(@astrojs/starlight@0.37.5(patch_hash=d48d848fae7599fe5f2a4c4e61e78cf85df2a809c5a915b48758d9f59cc43d23)(astro@5.17.1(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.54.0)(typescript@5.9.3))))
+        version: 0.6.0(@astrojs/starlight@0.37.5(patch_hash=d48d848fae7599fe5f2a4c4e61e78cf85df2a809c5a915b48758d9f59cc43d23)(astro@5.17.1(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.54.0)(typescript@5.9.3)))(starlight-sidebar-topics@0.7.1(@astrojs/starlight@0.37.5(patch_hash=d48d848fae7599fe5f2a4c4e61e78cf85df2a809c5a915b48758d9f59cc43d23)(astro@5.17.1(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.54.0)(typescript@5.9.3))))
       tailwindcss:
         specifier: ^4.1.18
         version: 4.1.18
@@ -1902,11 +1902,11 @@ packages:
       '@astrojs/starlight': '>=0.38'
       starlight-sidebar-topics: '>=0.7'
 
-  starlight-sidebar-topics@0.6.2:
-    resolution: {integrity: sha512-SNCTUZS/hcVor0ZcaXbaSVU37+V+qtvzNirkvnOg3Mqu/awuGpthkH5+uKpiZqWxLffp6TrOlsv5E5QsxrndNg==}
-    engines: {node: '>=18'}
+  starlight-sidebar-topics@0.7.1:
+    resolution: {integrity: sha512-2PBR05ZUvnKNoJtbL2u6GoE1qmQD0tFcd5+inYEJHJkx3LE2P+vlNslofTGHLtzch2XzyNbHUBQQu35bouA6NQ==}
+    engines: {node: '>=22.12.0'}
     peerDependencies:
-      '@astrojs/starlight': '>=0.32.0'
+      '@astrojs/starlight': '>=0.38.0'
 
   stream-replace-string@2.0.0:
     resolution: {integrity: sha512-TlnjJ1C0QrmxRNrON00JvaFFlNh5TTG00APw23j74ET7gkQpTASi6/L2fuiav8pzK715HXtUeClpBTw2NPSn6w==}
@@ -4635,12 +4635,12 @@ snapshots:
 
   space-separated-tokens@2.0.2: {}
 
-  starlight-sidebar-topics-dropdown@0.6.0(@astrojs/starlight@0.37.5(patch_hash=d48d848fae7599fe5f2a4c4e61e78cf85df2a809c5a915b48758d9f59cc43d23)(astro@5.17.1(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.54.0)(typescript@5.9.3)))(starlight-sidebar-topics@0.6.2(@astrojs/starlight@0.37.5(patch_hash=d48d848fae7599fe5f2a4c4e61e78cf85df2a809c5a915b48758d9f59cc43d23)(astro@5.17.1(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.54.0)(typescript@5.9.3)))):
+  starlight-sidebar-topics-dropdown@0.6.0(@astrojs/starlight@0.37.5(patch_hash=d48d848fae7599fe5f2a4c4e61e78cf85df2a809c5a915b48758d9f59cc43d23)(astro@5.17.1(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.54.0)(typescript@5.9.3)))(starlight-sidebar-topics@0.7.1(@astrojs/starlight@0.37.5(patch_hash=d48d848fae7599fe5f2a4c4e61e78cf85df2a809c5a915b48758d9f59cc43d23)(astro@5.17.1(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.54.0)(typescript@5.9.3)))):
     dependencies:
       '@astrojs/starlight': 0.37.5(patch_hash=d48d848fae7599fe5f2a4c4e61e78cf85df2a809c5a915b48758d9f59cc43d23)(astro@5.17.1(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.54.0)(typescript@5.9.3))
-      starlight-sidebar-topics: 0.6.2(@astrojs/starlight@0.37.5(patch_hash=d48d848fae7599fe5f2a4c4e61e78cf85df2a809c5a915b48758d9f59cc43d23)(astro@5.17.1(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.54.0)(typescript@5.9.3)))
+      starlight-sidebar-topics: 0.7.1(@astrojs/starlight@0.37.5(patch_hash=d48d848fae7599fe5f2a4c4e61e78cf85df2a809c5a915b48758d9f59cc43d23)(astro@5.17.1(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.54.0)(typescript@5.9.3)))
 
-  starlight-sidebar-topics@0.6.2(@astrojs/starlight@0.37.5(patch_hash=d48d848fae7599fe5f2a4c4e61e78cf85df2a809c5a915b48758d9f59cc43d23)(astro@5.17.1(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.54.0)(typescript@5.9.3))):
+  starlight-sidebar-topics@0.7.1(@astrojs/starlight@0.37.5(patch_hash=d48d848fae7599fe5f2a4c4e61e78cf85df2a809c5a915b48758d9f59cc43d23)(astro@5.17.1(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.54.0)(typescript@5.9.3))):
     dependencies:
       '@astrojs/starlight': 0.37.5(patch_hash=d48d848fae7599fe5f2a4c4e61e78cf85df2a809c5a915b48758d9f59cc43d23)(astro@5.17.1(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.54.0)(typescript@5.9.3))
       picomatch: 4.0.3
